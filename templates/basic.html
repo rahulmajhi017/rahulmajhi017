@@ -1,0 +1,485 @@
+﻿{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+
+
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+  
+    <script src="{% static 'jquery.js' %}"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'homepage/bootstrap/css/bootstrap.min.css' %}">
+    
+   <title>HEALTH | PRO</title>
+   
+   <link rel="stylesheet" href="{% static 'homepage/bootstrap/css/bootstrap.min.css' %}">
+   <link rel="stylesheet" href="{% static 'homepage/css.css' %}">
+    
+
+    
+<style>
+
+  body {
+    margin: auto;
+    overflow: auto;
+    animation: gradient 15s ease infinite;
+    
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+</style>
+
+   
+  <style>
+
+   .img {
+    position: relative;
+    float: left;
+    width:  200px;
+    height: 200px;
+    background-position: 100% 100%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+
+
+  body{
+
+  background-image: url( "{% static 'homepage/13313271_v870-tang-36.jpg' %}");
+  background-attachment: fixed;
+  opacity: 0.90;
+  background-repeat: no-repeat;
+  
+  background-size:cover;
+
+  }
+
+
+</style>
+
+
+
+
+    {% block head %}
+
+
+
+    {% endblock %}
+
+
+  
+  </head>
+
+
+  <body>
+
+
+
+      <div class="container-fluid">
+
+          <div class="page-header mt-1 mb-1 ml-1 ">
+          
+        </div>
+      
+        <style>
+          .navbar-nav .nav-link {
+              color: black;
+              transition: color 0.1s ease;
+          }
+          .nav-link {
+              border-radius: 15px;
+              transition: transform 0.3s ease, background-color 0.3s ease, border-radius 0.3s, box-shadow 0.3s ease;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.13); /* Add shadow effect */
+          }
+          .nav-link:hover {
+              color: #f24848 !important;
+              background-color: white;
+              transform: scale(1.2);
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+          }
+      </style>
+
+       
+      
+      
+          <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(27, 64, 90, 0.5)">
+            <a class="navbar-brand" href="{% url 'home' %}" style="color: black;">HEALTH <span style="color: red;">|</span> PRO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                          <a class="nav-link" href="{% url 'home' %}" style="color: black;">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="{% url 'home' %}" style="color: black;">About</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="{% url 'home' %}" style="color: black;">Contact</a>
+                      </li>
+                      
+      
+      
+                    {% if user.is_authenticated %}
+                      
+                      {% if user.patient %}
+      
+                      <li class="nav-item ml-2">
+                      <li class="nav-link" href="{% url 'patient_ui' %}" style="color: rgb(91, 252, 50);">Hello, {{user.patient.name}}</li>
+                      </li>
+                      <li class="nav-item ml-2">
+                          <a class="nav-link" href="{% url 'patient_ui' %}">Profile</a>
+                          </li>
+      
+                      {% endif %}
+                      
+                      {% if user.doctor  %}
+      
+                      <li class="nav-item ml-2">
+                        <li class="nav-link" href="{% url 'doctor_ui' %}" style="color: rgb(91, 252, 50);">Hello, Dr. {{user.doctor.name}}</li>
+                        </li>
+                        <li class="nav-item ml-2">
+                            <a class="nav-link" href="{% url 'doctor_ui' %}">Profile</a>
+                            </li>
+      
+      
+                      {% endif %}
+
+                      {% if user.is_superuser  %}
+      
+                      <li class="nav-item ml-2">
+                        <li class="nav-link" href="{% url 'admin_ui' %}" style="color: rgb(91, 252, 50);">Admin: {{user.username}}</li>
+                        </li>
+                        <li class="nav-item ml-2">
+                            <a class="nav-link" href="{% url 'admin_ui' %}">Profile</a>
+                            </li>
+      
+      
+                      {% endif %}
+      
+                      <li class="nav-item ml-2">
+      <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#logout-modal" style="color: rgb(247, 190, 188);">Log out</button>
+                        
+                      </li>
+      
+      
+
+
+
+
+                      
+
+
+
+
+
+
+                      
+      
+      
+                      <!-- Small modal -->
+      
+                      <div class="modal fade" id="logout-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4>Logout <i class="fa fa-lock"></i></h4>
+                            </div>
+                            <div class="modal-body">
+                              <i class="fa fa-question-circle"></i><span style="color: rgb(42, 187, 6);">{{ user.patient.name }}</span> Are you sure you want to log-off?
+                            </div>
+                            <div class="modal-footer">
+                              <a href="{% url 'logout' %}" class="btn btn-primary btn-block">Logout</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                        
+      
+
+                      {% else %}
+                      
+                     
+
+
+                    <div class="col popup-card">
+                      <a href="{% url 'sign_in_admin' %}">
+                          <img alt="admin" src="{% static 'homepage/5907-removebg-preview.png' %}" class="img" style="width: 40px; height: auto;">
+                      </a>
+                  </div>
+                  
+
+
+
+
+
+                      
+                      <li class="nav-item ml-2">
+                          <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg2">Signup</a>
+                      </li>
+                      <li class="nav-item ml-">
+                          <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">Signin</a>
+                      </li>
+                    </li>
+                    
+                      
+                      {% endif %}
+      
+                  </ul>
+              </div>
+          </nav>
+      
+
+
+
+    
+<!-- Large modal -->
+<!-- Add CSS -->
+<style>
+  /* Define the popup animation for the modal */
+  .modal-content {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Scale up and add shadow when hovered */
+  .modal-content:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Define the popping animation for the images */
+  .popup-card {
+      transition: transform 0.3s ease;
+  }
+
+  /* Pop in when hovered */
+  .popup-card:hover {
+      transform: scale(1.1);
+  }
+</style>
+
+<!-- Modal HTML -->
+<!-- Modal HTML -->
+<!-- Add CSS -->
+<style>
+  /* Define the popup animation for the modal */
+  .modal-content {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Scale up and add shadow when hovered */
+  .modal-content:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Define the popping animation for the images */
+  .popup-card {
+      transition: transform 0.3s ease;
+  }
+
+  /* Pop in when hovered */
+  .popup-card:hover {
+      transform: scale(1.1);
+  }
+</style>
+
+
+
+
+
+<!-- Modal HTML Signup -->
+
+
+
+<div class="col-md-6 text-center">
+<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" style="background-color: #77d5cb;">
+      <center>
+        <h1>Signup As</h1>
+      </center>
+     
+      <center>
+        <form>
+          
+          <div class="container mt-5 mb-5">
+            <div class="row justify-content-center">
+                <div class="popup-card">
+                  <a href="{% url 'signup_doctor' %}">
+                    <img alt="Doctor" src="{% static 'homepage/doctor_consultation_02-removebg-preview.png' %}" class="img">
+                  </a>
+                  <p>Signup as Doctor</p>
+                </div>
+              
+              
+                <div class="popup-card">
+                  <a href="{% url 'signup_patient' %}">
+                    <img alt="patient" src="{% static 'homepage/52951-removebg-preview.png' %}" class="img">
+                  </a>
+                  <p>Signup as Patient</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </form>
+      </center>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal HTML Signin-->
+
+<div class="col-md-6 text-center">
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content" style="background-color: #77d5cb;">
+        <center>
+          <h1>Signin As</h1>
+        </center>
+       
+        <center>
+          <form>
+            
+            <div class="container mt-5 mb-5">
+              <div class="row justify-content-center">
+                  <div class="popup-card">
+                    <a href="{% url 'sign_in_doctor' %}">
+                      <img alt="Doctor" src="{% static 'homepage/doctor_consultation_02-removebg-preview.png' %}" class="img">
+                    </a>
+                    <p>Signin as Doctor</p>
+                  </div>
+                
+                
+                  <div class="popup-card">
+                    <a href="{% url 'sign_in_patient' %}">
+                      <img alt="patient" src="{% static 'homepage/52951-removebg-preview.png' %}" class="img">
+                    </a>
+                    <p>Signin as Patient</p>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+          </form>
+        </center>
+      </div>
+    </div>
+  </div>
+  
+
+<!-- Add JavaScript -->
+<script>
+  // Add JavaScript to handle the modal popup animation
+  $(document).ready(function() {
+      $('.modal-content').hover(
+          function() {
+              $(this).css('transform', 'scale(1.02)');
+              $(this).css('box-shadow', '0 0 20px rgba(0, 0, 0, 0.3)');
+          },
+          function() {
+              $(this).css('transform', 'none');
+              $(this).css('box-shadow', 'none');
+          }
+      );
+
+      $('.popup-card').hover(
+          function() {
+              $(this).css('transform', 'scale(1.1)');
+          },
+          function() {
+              $(this).css('transform', 'none');
+          }
+      );
+  });
+</script>
+
+
+<!-- Add JavaScript -->
+<script>
+  // Add JavaScript to handle the modal popup animation
+  $(document).ready(function() {
+      $('.modal-content').hover(
+          function() {
+              $(this).css('transform', 'scale(1.02)');
+              $(this).css('box-shadow', '0 0 20px rgba(0, 0, 0, 0.3)');
+          },
+          function() {
+              $(this).css('transform', 'none');
+              $(this).css('box-shadow', 'none');
+          }
+      );
+
+      $('.popup-card').hover(
+          function() {
+              $(this).css('transform', 'scale(1.1)');
+          },
+          function() {
+              $(this).css('transform', 'none');
+          }
+      );
+  });
+</script>
+
+
+
+
+  {% block body %}
+
+  {% endblock %}
+
+
+
+
+</div>
+
+
+
+   <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   
+    <script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+
+
+</body>
+</html>
