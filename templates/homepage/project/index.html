@@ -1,0 +1,516 @@
+﻿
+{% extends "basic.html" %}
+{% load static %}
+
+
+	{% block head %}
+
+
+{% endblock %}
+
+
+
+
+{% block body %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br></br>
+
+
+
+
+<div class="jumbotron" style="background-color: #a7dcea;">
+  <div class="container">
+    <div class="row">
+     
+      <div class="col-md-6">
+        <p class="lead">BE YOUR OWN DOCTOR</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="jumbotron" style="background-color: #a7dcea;">
+  <div class="container">
+    <div class="row">
+      <!-- Left side with image -->
+      <div class="col-md-6">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMcuJoaHDM644yXGjb9y91AV22S5BrLmmquXmUbRKYGrP1AwDWwjjTkgJiuMn99R8e8B_xfq1AAg_VJsWv7W__SGL6FACAGSu707by2hIkfk6fx9S9S7Y7ZH4r9Jr97NgpRCD8GxFSt_UbH0wBH_Xrb1c04DOQeqpe4HwepFDjinbY8lY_J9WTRpuctb7EU6Y8Ab151O8FCO0MU1sJAQixKBuCf8ZkUQoB-OHSwD_KvhtVAYRDGseU9xgD6ppiMeTrSwdUWj78EIAdGNQs0n-JIzmmxZIGKfE5Kex6uHbXjOHyllTZxpHWQ4YAa-rjsjP18aqgmFr1PgPnCcxpHoJgxINJWL2VhWOdjs2rTEcPh6r6fZtH5W6UrfnrrohdeOk7EVNvsjaWzTKsFJIQFT4enBvuoptriJ6RGPx-71yVhTU7tmHzplHUToRhN4gLsCKKobZUmS0dBgUiL_knsO-fErwaq0b52cfC6Qi0ZLVP_WtBYzj5CQ7m_juh9C_LZVAnQ4bdp7ga65kTBkyk_6C0ATu0Ln8fkbbLAIVwzDfcahI3zjNG8Lt24puCAD5Ap1aT4oBQKHlsWKhvYYNhyvTlKzE_DkohM_0YJ-5FEsfFcMKLb3gGqhywADCvQnYLWNBABLjyouDIq44tzHlEq9j-PDLEprf1PCb64PdiYU7TJftn2ZmU8T9IHpbEuBtIcMrGUcqfmeuUphllWEVUzJXXVEbqI3ZkmGJEjHud9amQQlT3KUdVNtAK0SBfNXEFOaXU_KckaApi82TzrqjQeK7lAa2Hlboi_31y-EL9vGEdUjDxkAIL8CE0OHJz5kBFuMhXFQpMP2-H7NSi_wTcKX9Nn3hrOJ0wGhi0SI9VKQZCHGdUs1mBX_apEXP8ScH72GAuJufWLw2kHaQjXz9QboMX4rm0zJ6Y7i8R-5CViBkBgr4CiQtshTrKBghXb=w1600-h1277-s-no-gm?authuser=0" alt="Image" class="img-fluid">
+      </div>
+      <!-- Right side with text -->
+      <div class="col-md-6">
+        <h1 class="display-4">BE YOUR OWN DOCTOR</h1>
+        <p class="lead">The application allows...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+     {% if user.is_authenticated %}
+
+     
+     {% else %}
+
+      <p class="lead">
+      <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal" data-target=".bd-example-modal-lg">Get started</button>
+      </p>
+    
+
+</div>
+
+<br><br><br>
+
+
+
+    
+
+    {% endif %}
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jumbotron" style="background-color: #a7dcea;">
+  <div class="container">
+    <div class="row">
+      <!-- Left side with image -->
+      <div class="col-md-6">
+        <h1 class="display-4">BE YOUR OWN DOCTOR</h1>
+        <p class="lead">The application allows...</p>
+      </div>
+      
+
+
+      <!-- Right side with text -->
+      <div class="col-md-6">
+        <center><h2>Our Doctors</h2></center>
+        <div id="doctorCarousel" class="carousel slide" data-ride="carousel" style="width: 500px; height: 500px;" >
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <div class="row mt-5 mb-5">
+                      <div class="col">
+                          <div class="card" >
+                              <div class="card-body text-center">
+                                  <h5 class="card-title">Dr. MANISH BANSAL </h5>
+                                  <img  alt="admin" src="{% static 'homepage/doctor 1.avif' %}" width="200" height="auto" class="rounded" >
+                                  <p class="card-text">H.No-1283, <br></br>Ward No-14, New Anaz Mandi Road, P.O-Radaur, Distt. Yamuna Nagar - 135133, (Haryana).</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="row mt-5 mb-5">
+                      <div class="col">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <h5 class="card-title">Dr. BANSAL JATINDER PAUL </h5>
+                                  <img  alt="admin" src="{% static 'homepage/Doctor 2.avif' %}" width="200" height="auto" class="rounded">
+                                  <p class="card-text">Om Niwas Khai Basti, Khai Road, Lehragaga-148031, Distt. Sangrur, Punjab.</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="row mt-5 mb-5">
+                      <div class="col">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <h5 class="card-title">DR. RADHIKA SWAROOP</h5>
+                                  <img  alt="admin" src="{% static 'homepage/Doctor 3.jpeg' %}" width="200" height="auto" class="rounded">
+                                  <p class="card-text">Swaroop Hospital, 1, Hawa Sarak, Civil Lines, # Jaipur-302 019.</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row mt-5 mb-5">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">DR. RADHIKA SWAROOP</h5>
+                                <img  alt="admin" src="{% static 'homepage/Doctor 4.jpg' %}" width="200" height="auto" class="rounded">
+                                <p class="card-text">Swaroop Hospital, 1, Hawa Sarak, Civil Lines, # Jaipur-302 019.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row mt-5 mb-5">
+                  <div class="col">
+                      <div class="card">
+                          <div class="card-body text-center">
+                              <h5 class="card-title">DR. RADHIKA SWAROOP</h5>
+                              <img  alt="admin" src="{% static 'homepage/Doctor 5.jpg' %}" width="200" height="auto" class="rounded">
+                              <p class="card-text">Swaroop Hospital, 1, Hawa Sarak, Civil Lines, # Jaipur-302 019.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row mt-5 mb-5">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">DR. RADHIKA SWAROOP</h5>
+                            <img  alt="admin" src="{% static 'homepage/Doctor 6.jpg' %}" width="200" height="auto" class="rounded">
+                            <p class="card-text">Swaroop Hospital, 1, Hawa Sarak, Civil Lines, # Jaipur-302 019.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="row mt-5 mb-5">
+              <div class="col">
+                  <div class="card">
+                      <div class="card-body text-center">
+                          <h5 class="card-title">DR. RADHIKA SWAROOP</h5>
+                          <img  alt="admin" src="{% static 'homepage/Doctor 7.jpg' %}" width="200" height="auto" class="rounded">
+                          <p class="card-text">Swaroop Hospital, 1, Hawa Sarak, Civil Lines, # Jaipur-302 019.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row mt-5 mb-5">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">DR. RADHIKA SWAROOP</h5>
+                        <img  alt="admin" src="{% static 'homepage/Doctor 8.jpg' %}" width="200" height="auto" class="rounded">
+                        <p class="card-text">Swaroop Hospital, 1, Hawa Sarak, Civil Lines, # Jaipur-302 019.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+          </div>
+          <a class="carousel-control-prev" href="#doctorCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#doctorCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+          </a>
+      </div>
+      
+      <script>
+          $(document).ready(function(){
+              $('#doctorCarousel').carousel({
+                  interval: 500 // Change slide every 3 seconds
+              });
+          });
+      </script>
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jumbotron" style="background-color: #a7dcea;">
+  <div class="container">
+    <div class="row">
+      <!-- Left side with image -->
+      <div class="col-md-6">
+        <h1 class="display-4">BE YOUR OWN DOCTOR</h1>
+        <p class="lead">The application allows...</p>
+      </div>
+      <!-- Right side with text -->
+      
+      <div class="col-md-6">
+
+      <p class="lead">
+        <center>
+        <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal" data-target=".bd-example-modal-lg">Get started</button>
+        </center>
+        </p>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-4 offset-md-4">
+          <div class="card border-primary rounded">
+              <div class="card-body text-center">
+                  <h1 class="card-title">Sign-In As</h1>
+                  <button type="button" class="btn btn-primary btn-lg btn-block rounded" data-toggle="modal" data-target=".bd-example-modal-lg">Sign In</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="footer" class="card bg-dark text-white">
+      <div class="card-body">
+        Contact-
+     
+    <ul >
+     
+      <li >
+        <h5 class="mb-1">Email: anujpradhan208@gmail.com</h5>
+      </li>
+      <li >
+        <h5 class="mb-1">Contact no. 9078166555</h5>
+      </li>
+      <li >
+        <h5 class="mb-1">Address: CET, bbsr</h5>
+        <div class="footer-copyright text-center">© 2020 Copyright:
+          <a href="#">HEALTH | PRO.com</a>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    
+
+
+
+
+    
+{% endblock %}

@@ -1,0 +1,598 @@
+﻿
+{% extends "basic.html" %}
+{% load static %}
+
+
+	{% block head %}
+
+
+{% endblock %}
+
+
+
+
+{% block body %}
+
+
+
+
+
+<div class="jumbotron text-center" style="background-color: #55b1cd; padding: 2rem; max-width: auto; margin: 0 auto;">  
+  <h1 class="display-4">HEALTH <span class="red-pipe">|</span> PRO</h1>
+  <p class="lead" style="font-size: 10px; color: #ffffff;">Your health is our priority.</p>
+
+</div>
+
+<br></br>
+
+<style>
+  /* Custom CSS for red pipe separator */
+  .red-pipe {
+    color: red;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-6">
+      <style>
+        /* Style for thin text */
+        h1 {
+          font-weight: 100; /* 300 is the value for thin font weight */
+          
+        }
+      </style>
+   
+  
+      <h1 style="color: #7f7f7f;">Welcome to</h1>
+      <h1 class="display-4" style="font-size: 2rem;">HEALTH <span class="red-pipe">|</span> PRO</h1>
+
+      <p class="lead">
+        Our mission is to empower individuals through precise and readily available disease prediction tools. Using state-of-the-art machine learning algorithms, our platform thoroughly examines symptoms and risk factors. This approach enables us to furnish personalized insights into potential health conditions, specifically tailored to each user's unique circumstances. By harnessing advanced technology, we're committed to democratizing access to essential health information, empowering individuals to proactively manage their well-being. 
+        </p>
+    </div>
+  </div>
+</div>
+<br></br>
+
+
+
+<div class="jumbotron" style="background-color: #a7dcea; padding: 2rem; max-width: auto; margin: 0 auto;">
+  <div class="container">
+    <div class="row">
+      <!-- Left side with image -->
+      <div class="col-md-6">
+        <img src="https://img.freepik.com/free-vector/flat-national-doctor-s-day-illustration-with-female-medic_23-2149436863.jpg?w=1480&t=st=1713158359~exp=1713158959~hmac=467fb44ad91d697306e3ddf588154b6f874f4baae36586a28be3f71a164889c7" alt="Image" class="img-fluid">
+      </div>
+      <!-- Right side with text -->
+      <div class="col-md-6">
+
+        <h1 style="color: #7f7f7f;">Your Health Matters to Us.</h1>
+        <p class="lead">From symptom analysis to personalized recommendations and expert consultations, our team is here for you. We are with you every step of the way, prioritizing your well-being and providing comprehensive support in detecting and managing diseases.
+          <br></br>No matter the health challenges you encounter, know that we are with you, offering accurate disease detection through symptoms analysis and connecting you with our team of experienced doctors for consultations, ensuring you receive the guidance and care you need.
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+
+<div class="jumbotron text-center" style="background-color: #a7dcea; padding: 2rem; max-width: auto; margin: 10 auto;">
+  <div class="container">
+    <div class="row">
+
+
+
+      <!-- Left side with image -->
+      <div class="col-md-6">
+        <h1 style="color: #7f7f7f;">CONSULT WITH OUR DOCTOR</h1>
+
+        <p class="lead" style="font-size: 25px;">Experience personalized care and attention—detect diseases by symptoms and get free consultations by our doctors, ensuring you receive the expert guidance you deserve.
+
+        <br><br>
+          
+        {% if user.is_authenticated %}
+
+     
+     {% else %}
+     CHECK YOUR DISEASES NOW</p>
+     <style>
+      .btn-primary {
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+          
+      }
+
+      .btn-primary:hover {
+          color: green !important;
+          background-color: lightgreen;
+          transform: scale(1.1); /* Increase size by 10% on hover *
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+
+      }
+      
+  </style>
+        <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal" data-target=".bd-example-modal-lg">CHECK NOW !!</button>
+        {% endif %}
+
+      </div>
+      
+
+
+      <!-- Right side with text -->
+   
+      <div class="col-md-6">
+        <h2 class="display-4" style="font-size: 1.5rem;">OUR BEST DOCTORS</h2>
+        <center>
+        <div id="doctorCarousel" class="carousel slide" data-ride="carousel" style="width: 350px; height: 500px;" >
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <div class="row mt-5 mb-5">
+                      <div class="col">
+                          <div class="card" style="box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);">
+                              <div class="card-body text-center">
+                                  <h5 class="card-title" style="font-size: 1rem;">DR. BENJAMIN DAVIS</h5>
+                                  <img  alt="admin" src="{% static 'homepage/doctor 1.avif' %}" width="200" height="auto" class="rounded" >
+                                  <h5 class="card-title" style="font-size: 1rem;">RHEUMATOLOGIST</h5>
+                                  <p class="card-text">Hospital: Mercy Hospital <br> Location: New York, USA</p>
+
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="row mt-5 mb-5">
+                      <div class="col">
+                          <div class="card" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+                              <div class="card-body text-center">
+                                  <h5 class="card-title" style="font-size: 1rem;">DR. JONATHAN MITCHELL</h5>
+                                  <img  alt="admin" src="{% static 'homepage/Doctor 2.avif' %}" width="200" height="auto" class="rounded">
+                                  <h5 class="card-title" style="font-size: 1rem;">CARDIOLOGIST</h5>
+                                  <p class="card-text">Hospital: St. Mary's Medical Center <br>
+                                    Location: Los Angeles, California, USA</p>
+                                    
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="row mt-5 mb-5">
+                      <div class="col">
+                          <div class="card" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+                              <div class="card-body text-center">
+                                  <h5 class="card-title" style="font-size: 1rem;">DR. EMILY JOHNSON</h5>
+                                  <img  alt="admin" src="{% static 'homepage/Doctor 3.jpeg' %}" width="200" height="auto" class="rounded">
+                                  <h5 class="card-title" style="font-size: 1rem;">ENT SPECIALIST</h5>
+                                  <p class="card-text">Hospital: Johns Hopkins Hospital <br>
+                                    Location: Baltimore, Maryland, USA</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row mt-5 mb-5">
+                    <div class="col">
+                        <div class="card" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" style="font-size: 1rem;">DR. SAMANTHA MARTINEZ</h5>
+                                <img  alt="admin" src="{% static 'homepage/Doctor 4.jpg' %}" width="200" height="auto" class="rounded">
+                                <h5 class="card-title" style="font-size: 1rem;">ORTHOPEDIST</h5>
+                                <p class="card-text">Hospital: Mount Sinai Hospital <br>
+                                  Location: Chicago, Illinois, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row mt-5 mb-5">
+                  <div class="col">
+                      <div class="card" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+                          <div class="card-body text-center">
+                              <h5 class="card-title" style="font-size: 1rem;">DR. ALEXANDER PETERSON</h5>
+                              <img  alt="admin" src="{% static 'homepage/Doctor 5.jpg' %}" width="200" height="auto" class="rounded">
+                              <h5 class="card-title" style="font-size: 1rem;">NEUROLOGIST</h5>
+                              <p class="card-text">Hospital: Massachusetts Gen. Hospital <br>
+                                Location: Boston, Massachusetts, USA</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row mt-5 mb-5">
+                <div class="col">
+                    <div class="card" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+                        <div class="card-body text-center">
+                            <h5 class="card-title" style="font-size: 1rem;">DR. RACHEL WILLIAMS</h5>
+                            <img  alt="admin" src="{% static 'homepage/Doctor 6.jpg' %}" width="200" height="auto" class="rounded">
+                            <h5 class="card-title" style="font-size: 1rem;">ALLERGIST / IMMUNOLOGIST</h5>
+                            <p class="card-text">Hospital: Royal London Hospital <br>
+                              Location: London, England</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="row mt-5 mb-5">
+              <div class="col">
+                  <div class="card" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+                      <div class="card-body text-center">
+                          <h5 class="card-title" style="font-size: 1rem;">DR. CHRISTOPHER EVANS</h5>
+                          <img  alt="admin" src="{% static 'homepage/Doctor 7.jpg' %}" width="200" height="auto" class="rounded">
+                          <h5 class="card-title" style="font-size: 1rem;">UROLOGIST</h5>
+                          <p class="card-text">Hospital: St. Vincent's Hospital <br>
+                            Location: Sydney, Australia</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row mt-5 mb-5">
+            <div class="col">
+                <div class="card" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" style="font-size: 1rem;">DR. OLIVIA TAYLOR</h5>
+                        <img  alt="admin" src="{% static 'homepage/Doctor 8.jpg' %}" width="200" height="auto" class="rounded">
+                        <h5 class="card-title" style="font-size: 1rem;">GASTROENTEROLOGIST</h5>
+                        <p class="card-text">Hospital: Toronto General Hospital <br>
+                          Location: Toronto, Ontario, Canada</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+          </div>
+          <a class="carousel-control-prev" href="#doctorCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#doctorCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+          </a>
+      </div>
+      
+      <script>
+          $(document).ready(function(){
+              $('#doctorCarousel').carousel({
+                  interval: 500 // Change slide every 3 seconds
+              });
+          });
+      </script>
+    
+      </div>
+    </center>
+    </div>
+  </div>
+</div>
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<title>Testimonial HTML</title>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="shortcut icon" href="images/fav-icon.png"/>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<section id="testimonials">
+<div class="testimonial-heading">
+<span>Comments</span>
+<h1>Clients Says</h1>
+</div>
+<div class="testimonial-box-container">
+<div class="testimonial-box">
+<div class="box-top">
+<div class="profile">
+<div class="profile-img">
+<img src="images/c-1.jpg" />
+</div>
+<div class="name-user">
+<strong>Touseeq Ijaz</strong>
+<span>@touseeqijazweb</span>
+</div>
+</div>
+<div class="reviews">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="far fa-star"></i>
+</div>
+</div>
+<div class="client-comment">
+<p>Easy to use and accurate results!</p>
+</div>
+</div>
+<div class="testimonial-box">
+<div class="box-top">
+<div class="profile">
+<div class="profile-img">
+<img src="images/c-2.jpg" />
+</div>
+<div class="name-user">
+<strong>J.K Rowling</strong>
+<span>@jkrowling</span>
+</div>
+</div>
+<div class="reviews">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+</div>
+<div class="client-comment">
+<p>Impressed with the reliability and simplicity.</p>
+</div>
+</div>
+<div class="testimonial-box">
+<div class="box-top">
+<div class="profile">
+<div class="profile-img">
+<img src="images/c-3.jpg" />
+</div>
+<div class="name-user">
+<strong>Harry Potter</strong>
+<span>@DanielRedclief</span>
+</div>
+</div>
+<div class="reviews">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="far fa-star"></i>
+</div>
+</div>
+<div class="client-comment">
+<p>Great tool for proactive health management.</p>
+</div>
+</div>
+<div class="testimonial-box">
+<div class="box-top">
+<div class="profile">
+<div class="profile-img">
+<img src="images/c-4.jpg" />
+</div>
+<div class="name-user">
+<strong>Oliva</strong>
+<span>@Olivaadward</span>
+</div>
+</div>
+<div class="reviews">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="far fa-star"></i>
+</div>
+</div>
+<div class="client-comment">
+<p>Highly recommend for quick health insights.</p>
+</div>
+</div>
+</div>
+</section>
+</body>
+</html>
+
+    
+    
+    
+    
+    
+    <style>
+    
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family: poppins;
+        box-sizing: border-box;
+    }
+    a{
+        text-decoration: none;
+    }
+    #testimonials{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width:100%;
+    }
+    .testimonial-heading{
+        letter-spacing: 1px;
+        margin: 30px 0px;
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .testimonial-heading h1{
+        font-size: 2.2rem;
+        font-weight: 500;
+        background-color: #202020;
+        color: #ffffff;
+        padding: 10px 20px;
+    }
+    .testimonial-heading span{
+        font-size: 1.3rem;
+        color: #252525;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    .testimonial-box-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width:100%;
+    }
+    .testimonial-box{
+        width:500px;
+        box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+        background-color: #ffffff;
+        padding: 20px;
+        margin: 15px;
+        cursor: pointer;
+    }
+    .profile-img{
+        width:50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 10px;
+    }
+    .profile-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    .profile{
+        display: flex;
+        align-items: center;
+    }
+    .name-user{
+        display: flex;
+        flex-direction: column;
+    }
+    .name-user strong{
+        color: #3d3d3d;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+    }
+    .name-user span{
+        color: #979797;
+        font-size: 0.8rem;
+    }
+    .reviews{
+        color: #f9d71c;
+    }
+    .box-top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .client-comment p{
+        font-size: 0.9rem;
+        color: #4b4b4b;
+    }
+    .testimonial-box:hover{
+        transform: translateY(-10px);
+        transition: all ease 0.3s;
+    }
+     
+    @media(max-width:1060px){
+        .testimonial-box{
+            width:45%;
+            padding: 10px;
+        }
+    }
+    @media(max-width:790px){
+        .testimonial-box{
+            width:100%;
+        }
+        .testimonial-heading h1{
+            font-size: 1.4rem;
+        }
+    }
+    @media(max-width:340px){
+        .box-top{
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        .reviews{
+            margin-top: 10px;
+        }
+    }
+    ::selection{
+        color: #ffffff;
+        background-color: #252525;
+    }
+     
+  </style>
+    
+    
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Contact Us</h3>
+        <p>Address: 123 Main Street, Anytown, USA</p>
+        <p>Email: support@health|pro.com</p>
+        <p>Phone: +1 (555) 123-4567</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Follow Us</h3>
+        <ul class="list-unstyled list-inline">
+          <li class="list-inline-item"><a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/1920px-2023_Facebook_icon.svg.png" alt="Facebook" style="width: auto; height: 40px;"></a></li>
+          <li class="list-inline-item"><a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1920px-Instagram_logo_2022.svg.png" alt="Instagram" style="width: auto; height: 40px;"></a></li>
+          <li class="list-inline-item"><a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/1920px-X_logo_2023.svg.png" alt="X" style="width: auto; height: 40px;"></a></li>
+          <li class="list-inline-item"><a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube" style="width: auto; height: 40px;"></a></li>
+
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h3>About Us</h3>
+        <p>At HEALTH | PRO, we are passionate about leveraging technology to improve healthcare outcomes. Our dedicated team of experts is committed to developing innovative solutions that make a positive impact on people's lives. With a focus on accuracy, efficiency, and user-friendliness, we strive to create cutting-edge tools for disease prediction and diagnosis. Our mission is to empower healthcare professionals and patients alike with the tools they need to make informed decisions and lead healthier lives. Join us on our journey towards a brighter, healthier future.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<style>
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+  }
+  
+</style>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    
+
+
+
+
+    
+{% endblock %}
